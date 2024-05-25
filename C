@@ -14,19 +14,29 @@ void printDigitReverse(int n){
         printDigitReverse(n/10);
     }
 }
+
+void reversed_string(char *s){
+    if (*s == '\0'){
+        return;
+    } else {
+        reversed_string(s + 1);
+        printf("%c", *s);
+    }
+}
 int main(){
-    
     int N;
-    printf("ENTER N:");
+    char string[] = "hello world";
+    printf("Enter n: ");
     scanf("%d", &N);
     
-    printf("DIGIT NORMAL:");
+    printf("digit normal: ");
     printDigit(N);
     printf("\n");
 
-    printf("DIGIT NORMAL:");
+    printf("digit reversed: ");
     printDigitReverse(N);
     printf("\n");
-
+    scanf("%c", string);
+    reversed_string(string);
     return 0;
 }
